@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         Collections.sort(countriesDataList)
         worldData()
         countryData()
-        buildCharts()
+       // buildCharts()
     }
 
     fun showCountryDetails() {
