@@ -53,8 +53,7 @@ class RequestTask : AsyncTask<String?, String?, String> {
                     response.append(inputLine)
                 }
                 `in`.close()
-                // print result
-                //  System.out.println(response.toString());
+
                 if (vType === RequestTypes.WORLD) {
                     populateWorldData(response.toString())
                 } else if (vType === RequestTypes.COUNTRIES) {
@@ -68,11 +67,11 @@ class RequestTask : AsyncTask<String?, String?, String> {
                 println("GET request not worked")
             }
             con.disconnect()
-            //JSON PARSING ENDS
+
         } catch (e: Exception) {
             e.printStackTrace()
         }
-        //  System.out.println("Do backgroudn resp : "+response);
+
         return response.toString()
     }
 
@@ -110,7 +109,7 @@ class RequestTask : AsyncTask<String?, String?, String> {
 
 
     private fun populateWorldData(response: String) {
-        //pasrse JSON
+
         var jsonObj: JSONObject? = null
         try {
             jsonObj = JSONObject(response)
@@ -137,7 +136,7 @@ class RequestTask : AsyncTask<String?, String?, String> {
     }
 
     private fun populateCountriesData(response: String) {
-        //pasrse JSON
+
         var jsonObj: JSONObject? = null
         try {
             jsonObj = JSONObject(response)
@@ -180,7 +179,7 @@ class RequestTask : AsyncTask<String?, String?, String> {
     }
 
     private fun populateCountryData(response: String) {
-        //pasrse JSON
+
         var jsonObj: JSONObject? = null
         try {
             jsonObj = JSONObject(response)
@@ -213,7 +212,7 @@ class RequestTask : AsyncTask<String?, String?, String> {
     }
 
     private fun populateCountryTimeline(response: String) {
-        //pasrse JSON
+
         var jsonObj: JSONObject? = null
         try {
             jsonObj = JSONObject(response).getJSONArray("timelineitems")[0] as JSONObject
@@ -225,7 +224,7 @@ class RequestTask : AsyncTask<String?, String?, String> {
                 val key = keys.next()
                 if (key.trim { it <= ' ' }.equals("stat", ignoreCase = true)) break
                 val `val` = jsonObj!![key] as JSONObject
-                //System.out.println("===Key : "+key + " | val : "+val);
+
                 val dataList = ArrayList<Data>()
                 dataList.add(Data("total_cases", `val`.getString("total_cases")))
                 dataList.add(Data("total_deaths", `val`.getString("total_deaths")))

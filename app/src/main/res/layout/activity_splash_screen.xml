@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4CAF50"
+    android:background="#FFFFFF"
     tools:context=".activity.SplashActivity">
 
     <TextView
@@ -17,7 +17,7 @@
         android:gravity="center"
         android:keepScreenOn="true"
         android:text="@string/app_name"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/holo_red_dark"
         android:textSize="70sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,11 +28,11 @@
         android:id="@+id/subTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/subTitle"
         android:layout_marginStart="40sp"
+        android:text="@string/subTitle"
+        android:textColor="@android:color/holo_orange_light"
         android:textSize="35sp"
         android:textStyle="bold|italic"
-        android:textColor="@android:color/holo_orange_light"
         app:layout_constraintStart_toStartOf="@+id/title"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 

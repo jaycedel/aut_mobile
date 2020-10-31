@@ -7,7 +7,7 @@
 
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="title">Covid 19</string>
-    <string name="subTitle">Stay Home, Stay Safe</string>
+    <string name="subTitle">Unite against COVID-19</string>
 
     <string name="heading1">Total Cases Vs Days(Since Jan\' 2020)</string>
     <string name="heading2">Total Deaths Vs Days(Since Jan\' 2020)</string>

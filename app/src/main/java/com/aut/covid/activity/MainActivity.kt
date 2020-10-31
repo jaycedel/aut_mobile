@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         WORLD, COUNTRIES, INDIA, COUNTRY, WORLDTIMELINE, COUNTRYTIMELINE, MOST, LEAST
     }
 
-    //local vars
     var pieChart: PieChart? = null
     var searchedText: EditText? = null
     var search: Button? = null
@@ -101,7 +100,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun affectedCountries(count: Int, value: RequestTypes) {
-        //System.out.println("Building chart for "+ value);
+
         if (value == RequestTypes.MOST) {
             pieChart = findViewById<View>(R.id.chart1) as PieChart
         } else if (value == RequestTypes.LEAST) {
@@ -119,10 +118,10 @@ class MainActivity : AppCompatActivity() {
         var temp = 0
         while (true) {
             val c = countriesDataList!![i]
-            //System.out.println("============= "+value.name());
+
             if (value == RequestTypes.MOST) {
                 if (countriesDataList!![i].totalCase > 0) {
-                    // System.out.println(c.getCountryName() + " count "+c.getTotalCase());
+
                     PieEntryLabels!!.add(c.countryName)
                     entries!!.add(BarEntry(c.totalCase.toFloat(), i))
                 }
@@ -135,7 +134,7 @@ class MainActivity : AppCompatActivity() {
                     temp++
                 }
                 if (i <= end) i++ else {
-                    // System.out.println("temp "+temp + "| count : "+count);
+
                     end += if (temp < count) {
                         count - temp
                     } else {
@@ -203,10 +202,7 @@ class MainActivity : AppCompatActivity() {
         val t8 = findViewById<TextView>(R.id.textView8)
         val t9 = findViewById<TextView>(R.id.textView9)
 
-//        Log.LogInfo("WORLDDATA - "+WORLDDATA);
-//        Log.LogInfo("Latest cases - "+WORLDDATA.getLatestCasesData());
-//        Log.LogInfo("casesData - "+WORLDDATA.getCasesData());
-//        Log.LogInfo("CountryName - "+WORLDDATA.getCountryName());
+
         val dataList = WORLDDATA!!.casesData as ArrayList<Data>
         t3.text = """
             ${dataList[0].key}
